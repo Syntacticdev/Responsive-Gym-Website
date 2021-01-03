@@ -1,0 +1,786 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --primary-color: #fff;
+    --secondary-color: crimson;
+}
+
+header {
+    background: linear-gradient(to right,#1e4157,#4d2236);
+    padding: 30px 5px;
+}
+
+header div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+}
+
+header div .logo {
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 20px;
+    color:var(--primary-color);
+    font-variant: small-caps;
+}
+
+header div .logo span {
+    color: var(--secondary-color);
+}
+
+header div ul {
+    list-style: none;
+}
+
+header div ul li {
+    display: inline-block;
+    margin: 0 25px;
+    position: relative;
+}
+
+ header div ul li::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 48px;
+    width: 0;
+    height: 4px;
+    background: var(--secondary-color);
+    transition: .4s;
+} 
+
+ header div ul li:hover::after {
+    width: 100%;
+} 
+
+header div ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+.dropdown svg.svgActive{
+    color: red;
+}
+
+.dropdown {
+    display: none;
+    z-index: 1000;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.dropdown svg {
+    fill: var(--primary-color);
+    width: 30px;
+    height: 30px;
+}
+
+.one {
+    width: 100%;
+    height: 70vh;
+    background-image: url('./images/background.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.one h4 {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.one h1 {
+    font-size: 60px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.join_btn {
+    padding: 15px 50px;
+    color: var(--primary-color);
+    background: transparent;
+    outline: none;
+    border: 1px solid #dc335a;
+    transition: background .4s;
+}
+
+
+.join_btn:hover {
+    background: #dc335a;
+}
+
+.two {
+    background-image: linear-gradient(to bottom, #685858 50%, #242424 50%);
+}
+
+.two .container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    width: 80vw;
+    margin: auto;
+    padding: 10px 5px;
+}
+
+.card {
+    background-color: var(--primary-color);
+}
+
+.card-head {
+    padding: 25px 0;
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 20px;
+}
+.gym_fitness .card-head {
+    background-color: #dd335a;
+}
+
+.outdoor_sports .card-head {
+    background-color: #323232;
+    border-right: 7px solid #eef3f220;
+}
+
+.yoga_pilates .card-head {
+    background-color:#323232 ;
+}
+
+.yoga_pilates .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20px;
+}
+
+.yoga_pilates .card-body ul {
+    list-style: none;
+    width: 100%;
+}
+
+.yoga_pilates .card-body ul li {
+    padding: 15px;
+    background: #5f8b8320;
+}
+
+.card-subhead {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.card-subhead button {
+    padding: 10px;
+}
+
+.card-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.card-body img {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}
+
+.card-body p {
+    width: 60%;
+    margin-right: 20px;
+}
+
+.three {
+    background-color: #242424;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px 0;
+}
+
+.three h1 {
+    font-size: 40px;
+    color: var(--primary-color);
+}
+
+.three h3 {
+    font-size: 25px;
+    color: var(--primary-color);
+}
+
+.three p {
+    text-align: center;
+    margin: 20px 0;
+    color: var(--primary-color);
+    opacity: .7;
+}
+
+.three span {
+    color:#db0d6d;
+}
+
+.three button {
+    padding: 15px 40px;
+    background: transparent;
+    outline: none;
+    border: 3px solid #dd335a;
+    color: var(--primary-color);
+    transition: background-color .5s ease-in-out;
+}
+
+.three button:hover {
+    background-color: #dd335a;
+}
+
+.four {
+    background-color: #323232;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 0;
+}
+
+.four .events {
+    width: 80vw;
+    display: grid;
+    grid-template-columns:  repeat(4,250px);
+    grid-column-gap: 3em;
+    padding: 30px 0;
+}
+
+.line-box {
+    width: 50%;
+    text-align: center;
+}
+
+.line-box h1 {
+    color: var(--primary-color);
+    font-size: 25px;
+    margin: 10px 0;
+}
+
+.line-box h1 span {
+    color: var(--secondary-color);
+}
+ .lines {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 4px;
+    background-color: #00000040;
+}
+
+.lines div:nth-of-type(1) {
+    width: 35%;
+}
+.lines div:nth-of-type(2) {
+    width: 30%;
+    height: 8px;
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    opacity: .4;
+}
+.lines div:nth-of-type(1) {
+    width: 35%;
+}
+
+.event-card {
+    background-color: var(--primary-color);
+    height: 60vh;
+}
+
+.event-title {
+    padding: 20px 0;
+    background-color: #db3259;
+    text-align: center;
+    font-size: 20px;
+    color: var(--primary-color);
+}
+
+.event-card img {
+    width: 100%;
+    height: 55%;
+    object-fit: cover;
+}
+
+.event-details {
+    padding: 5px 0;
+}
+
+.event-details ul {
+    list-style: none;
+    margin-left: 25px;
+}
+
+.event-details ul li {
+    margin-top: 15px;
+}
+
+.button-control button {
+    padding: 8px;
+    background: transparent;
+    border: 3px solid #dd335a;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.time {
+    font-weight: 900;
+}
+
+.five {
+    background-color: #db3259;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 0;
+}
+.five .line-box > div {
+    background-color: var(--primary-color);
+    opacity: .4;
+}
+
+.five .line-box div:nth-of-type(2){
+    background-color: #201414;
+    opacity: 1;
+}
+.five .line-box h1 span {
+    color:var(--primary-color);
+    font-weight: 500;
+    opacity: .7;
+}
+
+.trainer_classes {
+    width: 80vw;
+    display: grid;
+    grid-template-columns: 60% 30%;
+    grid-column-gap: 4em;
+    padding: 20px 0;
+}
+.profile-card {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.profile-card > div {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    margin: 0 35px;
+}
+
+.profile-card:first-child {
+    background-color: #201414;
+}
+.profile-card:last-child {
+    background-color: var(--primary-color);
+}
+
+.profile-card:first-child h2 {
+    color: var(--primary-color);
+}
+
+.profile-card h4 {
+    color: #db0d6d;
+}
+
+.profile-card p {
+    color: #995675;
+}
+
+.profile-card img {
+    width: 150px;
+    height: 150px;
+}
+
+.gym_fitness_profile_card h3 {
+    padding: 10px 5px;
+    background-color: var(--primary-color);
+    color: #201414;
+}
+
+.gym_fitness_profile_card .details {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.gym_fitness_profile_card .details  > div {
+    width: 75%;
+}
+
+.gym_fitness_profile_card .details  > div button {
+    padding: 5px 25px;
+    background-color: var(--primary-color);
+    border: none;
+    outline: none;
+    margin: 10px 0;
+    transition: all .5s;
+}
+
+.gym_fitness_profile_card .details  > div button:hover {
+    background-color: #201414;
+    color: var(--primary-color);
+}
+
+.gym_fitness_profile_card img {
+    width: 75px;
+    height: 75px;
+    border-radius: 100%;
+}
+
+.gym_fitness_profile_card ul {
+    list-style: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.gym_fitness_profile_card ul li {
+    padding: 7px;
+    color: var(--primary-color);
+    opacity: .7;
+    font-weight: 600;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+
+.six {
+    background-color: #323232;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 0;
+}
+
+.six .line-box span {
+    color: var(--primary-color);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.membership-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    margin: 0 10vw ;
+    display: grid;
+    grid-template-columns:  repeat(3,300px);
+    grid-column-gap: 3em;
+    padding: 30px 0;
+}
+
+.membership_duration {
+    display: flex;
+}
+
+.label {
+    background-color: var(--primary-color);
+    color: #201414;
+    width: 100%;
+    padding: 20px;
+}
+
+.membership_duration h1 {
+    color: #a62446;
+    font-size: 90px;
+}
+
+.membership_duration > div {
+    display: flex;
+    height: 90px;
+    margin: 20px 0;
+}
+
+.membership_duration > div > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+} 
+
+.membership_duration > div > div span {
+    height: 50%;
+}
+
+.membership_duration > div > div span:first-child {
+    color: #a62446;
+    font-size: 40px;
+}
+
+.membership_duration > div > div span:last-child {
+    color: var(--primary-color);
+    font-size: 40px;
+}
+
+.membership-cards ul {
+    list-style: none;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.membership-cards ul li {
+    border-top: 2px double var(--primary-color);
+    padding: 12px;
+    color:#555555;
+}
+
+.membership-cards button {
+    border: 2px solid #a62446;
+    outline: none;
+    color: var(--primary-color);
+    padding: 10px 25px;
+    background: transparent;
+    transition: background .5s ease-in-out;
+    margin-top: 10px;
+}
+.basic_membership_signup_btn:hover {
+    background-color: #111a18;
+}
+.standard_membership_signup_btn:hover {
+    background-color: #425e92;
+}
+.premium_membership_signup_btn:hover {
+    background-color: #40b83c;
+}
+
+.m-card{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    height: 450px;
+}
+
+
+.basic-membership-card {
+    background-color: #262626;
+}
+
+.standard-membership-card {
+    background-color: #dc335a;
+}
+
+.premium-membership-card {
+    background-color: #262626;
+}
+
+
+.seven {
+    
+    background-color: #262626;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 0;
+}
+
+.foot .event-label {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.foot {
+    width: 80vw;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,300px);
+    grid-column-gap: 3em;
+    color: #726f6f;
+}
+
+span a {
+    text-decoration: none;
+}
+
+span svg {
+    fill: #db3259;
+}
+
+.opening_hours ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.opening_hours ul li span:last-child {
+    color: var(--primary-color);
+}
+
+.contact_info h3 span {
+    color: var(--primary-color);
+}
+
+.contact_info * {
+    margin-bottom: 10px;
+}
+
+.newsletter div {
+    margin-top: 20px;
+}
+
+.newsletter form  input, .newsletter form button {
+    padding: 10px;
+    border: none;
+    background-color: #1e4157;
+    color: var(--primary-color);
+    outline: none;
+}
+
+.newsletter form button:hover {
+    background-color: #40b83c;
+}
+
+.copyright {
+    width: 100%;
+    background-color: #161212;
+    text-align: center;
+    padding: 20px 0;
+    font-weight: 900;
+    font-style: oblique;
+    color: var(--primary-color);
+    opacity: .8;
+    font-family: serif;
+}
+
+
+
+@media (max-width:960px) {
+    header div ul {
+        position: fixed;
+        top: 0;
+        right:  0;
+        background-color: rgba(190, 6, 61, 0.05);
+        backdrop-filter: blur(10px);
+        z-index: 999;
+        width: 100%;
+        display: none;
+    }
+
+    header div ul li a:hover {
+        color: #73dd69;
+        font-size: 30px;
+        font-style: italic;
+        padding: 5px;
+        transition: all .5s;
+        text-decoration: double;
+        text-decoration-color: pink;
+    }
+
+    header div ul li::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 0;
+    } 
+
+    .active {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        transition: opacity 1s ease-in-out;
+    }
+
+    .dropdown {
+        display: block;
+        position: fixed;
+        right: 50px;
+    }
+
+    .two {
+        background: #242424;
+        padding: 10px 0;
+        
+    }
+    .card {
+        padding-bottom: 10px;
+    }
+    .two .container {
+        width: 90%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 3em;
+        padding-top: 10px ;
+    }
+    .three {
+        background-color: #161212;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .four .events {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 3em;
+    }
+    .event-card {
+        height: 85vh;
+    }
+    .event-card img {
+        height: 70%;
+    }
+    .trainer_classes {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 40px 0;
+    }
+    .six {
+        padding: 40px 0;
+    }
+    .membership-cards {
+        grid-template-columns: 1fr;
+        grid-gap: 3em;
+        padding: 20px;
+    }
+    .foot {
+        grid-template-columns: repeat(2,200px);
+        grid-gap: 3em;
+        padding: 20px;
+    }
+
+    .newsletter form input, .newsletter form button {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width:860px){
+    
+    .profile-card img {
+        height: 280px;
+    }
+    .foot {
+        display: grid;
+        grid-template-columns: 300px;
+    }
+}
+
+
+@media (max-width: 828px) {
+    .membership-cards {
+        grid-template-columns: 300px;
+    }
+
+    .foot {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
